@@ -2,7 +2,6 @@
 layout: post
 title: 搭建SSR-SS服务器教程
 tags:
-  - 科学上网
   - 技术分享
 ---
 

@@ -2,7 +2,7 @@
 title: Hexo 的文档 
 date: #2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改
 tags:
-  - 博客网站
+  - 技术分享
 ---
 ​	[Hexo](https://hexo.io/zh-cn/) 是高效的静态站点生成框架，她基于 [Node.js](https://nodejs.org/)。 通过 Hexo 你可以轻松地使用 Markdown 编写文章，除了 Markdown 本身的语法之外，还可以使用 Hexo 提供的 [标签插件](https://hexo.io/zh-cn/docs/tag-plugins.html) 来快速的插入特定形式的内容。在这篇文章中，假定你已经成功安装了 Hexo，并使用 Hexo 提供的命令创建了一个站点。
 

@@ -2,7 +2,7 @@
 layout: post
 title: 时间管理方法
 tags:
-  - 韶华追忆
+  - 心情随笔
 ---
 
 ![img](http://jiangjiawei.epizy.com/wp-content/uploads/2020/06/flowers-5229022_640.jpg)
