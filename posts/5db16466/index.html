@@ -17,33 +17,33 @@
 <meta property="og:site_name" content="蒋家威的博客">
 <meta property="og:description" content="Linux运维记录-根磁盘扩容（LVM+非LVM1.查看现有分区大小**df -T   LVM分区，磁盘总大小为20G,根分区总容量为17G 2.关机增加大小为30G(测试环境使用的Vmware Workstation)  扩展分区到30G">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/imgs/3259553-89b0157044970265-1710816777631-162.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-2797e3050686449b-1710816777632-163.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-a0366bb674b44f12-1710816777631-161.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-1cbe7facdadff9bd-1710816777632-167.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-e1ba05156f11b547-1710816777632-164.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-700e6cb7fb268306-1710816777632-165.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-cf6f3d4e807acaa5-1710816777632-166.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-67cac8c1c780248d-1710816777632-168.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-585215fcd2940e25-1710816777632-169.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-96b258ed69c7b8fe-1710816777632-170.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-4e8cbb4522f57cb4-1710816777632-171.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-9faab28c65c03ffb-1710816777632-172.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-20ca17c409690a17-1710816777632-174.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-a5c1e6baf7a3a080-1710816777632-173.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-1d6519285921f2bb-1710816777632-175.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-7ebfd645ff37877f-1710816777632-177.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-3f4f974ae31f41dc-1710816777632-176.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-4f504e0fd59f7380-1710816777632-178.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-199fb2bc6db5ab71-1710816777632-179.webp">
-<meta property="og:image" content="https://github.com/imgs/3259553-b67666e234494064-1710816777632-180.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-89b0157044970265-1710816777631-162.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-2797e3050686449b-1710816777632-163.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-a0366bb674b44f12-1710816777631-161.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-1cbe7facdadff9bd-1710816777632-167.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-e1ba05156f11b547-1710816777632-164.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-700e6cb7fb268306-1710816777632-165.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-cf6f3d4e807acaa5-1710816777632-166.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-67cac8c1c780248d-1710816777632-168.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-585215fcd2940e25-1710816777632-169.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-96b258ed69c7b8fe-1710816777632-170.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-4e8cbb4522f57cb4-1710816777632-171.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-9faab28c65c03ffb-1710816777632-172.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-20ca17c409690a17-1710816777632-174.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-a5c1e6baf7a3a080-1710816777632-173.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-1d6519285921f2bb-1710816777632-175.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-7ebfd645ff37877f-1710816777632-177.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-3f4f974ae31f41dc-1710816777632-176.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-4f504e0fd59f7380-1710816777632-178.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-199fb2bc6db5ab71-1710816777632-179.webp">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-b67666e234494064-1710816777632-180.webp">
 <meta property="article:published_time" content="2024-03-19T02:48:58.408Z">
-<meta property="article:modified_time" content="2024-03-21T03:00:12.917Z">
+<meta property="article:modified_time" content="2024-03-22T07:15:07.207Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="知识库">
 <meta property="article:tag" content="CentOS7">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/imgs/3259553-89b0157044970265-1710816777631-162.webp">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-89b0157044970265-1710816777631-162.webp">
   
     <link rel="alternative" href="/atom.xml" title="蒋家威的博客" type="application/atom+xml">
   
@@ -307,10 +307,10 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>Linux运维记录-根磁盘扩容（LVM+非LVM<em>1.查看现有分区大小**df -T</em> </p>
-<p><img src="/imgs/3259553-89b0157044970265-1710816777631-162.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-89b0157044970265-1710816777631-162.webp" alt="img"></p>
 <p>LVM分区，磁盘总大小为20G,根分区总容量为17G</p>
 <p>2.关机增加大小为30G(测试环境使用的Vmware Workstation)</p>
-<p><img src="/imgs/3259553-2797e3050686449b-1710816777632-163.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-2797e3050686449b-1710816777632-163.webp" alt="img"></p>
 <p>扩展分区到30G</p>
 <a id="more"></a>
 
@@ -319,82 +319,82 @@
 <p>df -TH</p>
 <p>lsblk</p>
 </blockquote>
-<p><img src="/imgs/3259553-a0366bb674b44f12-1710816777631-161.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-a0366bb674b44f12-1710816777631-161.webp" alt="img"></p>
 <p>磁盘总大小为30G,根分区为17G</p>
 <p>4.创建分区</p>
 <blockquote>
 <p>fdisk /dev/sda</p>
 </blockquote>
-<p><img src="/imgs/3259553-1cbe7facdadff9bd-1710816777632-167.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-1cbe7facdadff9bd-1710816777632-167.webp" alt="img"></p>
 <p>将sda剩余空间全部给sda3</p>
 <p>5.刷新分区并创建物理卷</p>
 <blockquote>
 <p>partprobe /dev/sda</p>
 <p>pvcreate /dev/sda3</p>
 </blockquote>
-<p><img src="/imgs/3259553-e1ba05156f11b547-1710816777632-164.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-e1ba05156f11b547-1710816777632-164.webp" alt="img"></p>
 <p>6.查看卷组名称，以及卷组使用情况</p>
 <blockquote>
 <p>vgdisplay</p>
 </blockquote>
-<p><img src="/imgs/3259553-700e6cb7fb268306-1710816777632-165.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-700e6cb7fb268306-1710816777632-165.webp" alt="img"></p>
 <p>VG Name为centos</p>
 <p>7.将物理卷扩展到卷组</p>
 <blockquote>
 <p>vgextend centos /dev/sda3</p>
 </blockquote>
-<p><img src="/imgs/3259553-cf6f3d4e807acaa5-1710816777632-166.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-cf6f3d4e807acaa5-1710816777632-166.webp" alt="img"></p>
 <p>使用sda3扩展VG  centos </p>
 <p>8.查看当前逻辑卷的空间状态</p>
 <blockquote>
 <p>lvdisplay</p>
 </blockquote>
-<p><img src="/imgs/3259553-67cac8c1c780248d-1710816777632-168.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-67cac8c1c780248d-1710816777632-168.webp" alt="img"></p>
 <p>需要扩展LV  /dev/centos/root</p>
 <p>9.将卷组中的空闲空间扩展到根分区逻辑卷</p>
 <blockquote>
 <p>lvextend -l +100%FREE /dev/centos/root</p>
 </blockquote>
-<p><img src="/imgs/3259553-585215fcd2940e25-1710816777632-169.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-585215fcd2940e25-1710816777632-169.webp" alt="img"></p>
 <p>10.刷新根分区</p>
 <blockquote>
 <p>xfs_growfs /dev/centos/root</p>
 </blockquote>
-<p><img src="/imgs/3259553-96b258ed69c7b8fe-1710816777632-170.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-96b258ed69c7b8fe-1710816777632-170.webp" alt="img"></p>
 <p>11.查看磁盘使用情况，扩展之前和之后是不一样的</p>
-<p><img src="/imgs/3259553-4e8cbb4522f57cb4-1710816777632-171.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-4e8cbb4522f57cb4-1710816777632-171.webp" alt="img"></p>
 <p>根分区已经变成27G</p>
 <h1 id="CentOS7，非LVM根分区扩容步骤："><a href="#CentOS7，非LVM根分区扩容步骤：" class="headerlink" title="CentOS7，非LVM根分区扩容步骤："></a>CentOS7，非LVM根分区扩容步骤：</h1><p>1.查看现有的分区大小</p>
-<p><img src="/imgs/3259553-9faab28c65c03ffb-1710816777632-172.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-9faab28c65c03ffb-1710816777632-172.webp" alt="img"></p>
 <p>非LVM分区，目前磁盘大小为20G，根分区总容量为17G</p>
 <p>2.关机增加磁盘大小为30G</p>
-<p><img src="/imgs/3259553-20ca17c409690a17-1710816777632-174.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-20ca17c409690a17-1710816777632-174.webp" alt="img"></p>
 <p>3.查看磁盘扩容后状态</p>
 <blockquote>
 <p>lsblk</p>
 <p>dh -TH</p>
 </blockquote>
-<p><img src="/imgs/3259553-a5c1e6baf7a3a080-1710816777632-173.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-a5c1e6baf7a3a080-1710816777632-173.webp" alt="img"></p>
 <p>现在磁盘总大小为30G,根分区为17G</p>
 <p>4.进行分区扩展磁盘，<strong>记住根分区起始位置和结束位置</strong></p>
-<p><img src="/imgs/3259553-1d6519285921f2bb-1710816777632-175.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-1d6519285921f2bb-1710816777632-175.webp" alt="img"></p>
 <p>5.删除根分区，切记不要保存</p>
-<p><img src="/imgs/3259553-7ebfd645ff37877f-1710816777632-177.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-7ebfd645ff37877f-1710816777632-177.webp" alt="img"></p>
 <p>6.创建分区，箭头位置为分区起始位置</p>
-<p><img src="/imgs/3259553-3f4f974ae31f41dc-1710816777632-176.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-3f4f974ae31f41dc-1710816777632-176.webp" alt="img"></p>
 <p>7.保存退出并刷新分区</p>
 <blockquote>
 <p>partpeobe /dev/sda</p>
 </blockquote>
-<p><img src="/imgs/3259553-4f504e0fd59f7380-1710816777632-178.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-4f504e0fd59f7380-1710816777632-178.webp" alt="img"></p>
 <p>8.查看分区状态</p>
-<p><img src="/imgs/3259553-199fb2bc6db5ab71-1710816777632-179.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-199fb2bc6db5ab71-1710816777632-179.webp" alt="img"></p>
 <p>这里不知道为啥变成19G了。。</p>
 <p>9.刷新根分区并查看状态</p>
 <blockquote>
 <p>xfs_growfs /dev/sda3</p>
 </blockquote>
-<p><img src="/imgs/3259553-b67666e234494064-1710816777632-180.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-b67666e234494064-1710816777632-180.webp" alt="img"></p>
 <p>根分区大小已变为27G</p>
 
     
@@ -819,7 +819,7 @@ if (canvasEl) {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -827,7 +827,7 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -835,11 +835,15 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">实施运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -859,11 +863,11 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">实施运维</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -872,10 +876,6 @@ if (canvasEl) {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网站</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">

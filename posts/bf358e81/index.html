@@ -17,20 +17,20 @@
 <meta property="og:site_name" content="蒋家威的博客">
 <meta property="og:description" content="windows将bat脚本设置为开机自启动修改注册表的方式​    进入注册表，点击任务栏开始，输入regedit.exe，进入[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run]位置后，新建一个二进制字符类型的项，数值数据位置填入所需开机自启动的应用程序位置，但是该方式应用于在产的系统会导致无法启动（由于系统使用了杀桌">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://github.com/jiangjiawei520/posts/bf358e81/imgs/20171204201910404-1711089370295-1">
-<meta property="og:image" content="https://github.com/jiangjiawei520/posts/bf358e81/imgs/2529681-20230601220008454-397450866-1711088408300-5-1711089370296-3.png">
-<meta property="og:image" content="https://github.com/jiangjiawei520/posts/bf358e81/imgs/2529681-20230601220044976-1617277185-1711088408300-7-1711089370295-2.png">
-<meta property="og:image" content="https://github.com/jiangjiawei520/posts/bf358e81/imgs/2529681-20230601220123976-2076616975-1711088408300-9-1711089370296-5.png">
-<meta property="og:image" content="https://github.com/jiangjiawei520/posts/bf358e81/imgs/2529681-20230601220206243-1671156388-1711088408300-11-1711089370296-7.png">
-<meta property="og:image" content="https://github.com/jiangjiawei520/posts/bf358e81/imgs/2529681-20230601220252995-1642239706-1711088408300-13-1711089370296-4.png">
-<meta property="og:image" content="https://github.com/jiangjiawei520/posts/bf358e81/imgs/2529681-20230601221007190-886504275-1711088408300-15-1711089370296-6.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/20171204201910404-1711089370295-1-1711090045612-15-1711090057596-29">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220008454-397450866-1711088408300-5-1711089370296-3-1711090045612-16-1711090057596-30.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220044976-1617277185-1711088408300-7-1711089370295-2-1711090045612-18-1711090057596-31.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220123976-2076616975-1711088408300-9-1711089370296-5-1711090045612-17-1711090057596-32.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220206243-1671156388-1711088408300-11-1711089370296-7-1711090045612-20-1711090057597-35.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220252995-1642239706-1711088408300-13-1711089370296-4-1711090045612-19-1711090057596-33.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601221007190-886504275-1711088408300-15-1711089370296-6-1711090045612-21-1711090057596-34.png">
 <meta property="article:published_time" content="2024-03-22T01:42:39.552Z">
-<meta property="article:modified_time" content="2024-03-22T06:36:13.078Z">
+<meta property="article:modified_time" content="2024-03-22T07:07:15.693Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CentOS7">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://github.com/jiangjiawei520/posts/bf358e81/imgs/20171204201910404-1711089370295-1">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/20171204201910404-1711089370295-1-1711090045612-15-1711090057596-29">
   
     <link rel="alternative" href="/atom.xml" title="蒋家威的博客" type="application/atom+xml">
   
@@ -301,7 +301,7 @@
 <a id="more"></a>
 
 <h3 id="添加任务计划的方式"><a href="#添加任务计划的方式" class="headerlink" title="添加任务计划的方式"></a>添加任务计划的方式</h3><p>在计算机管理下，在任务计划程序库下，点击创建基本任务，按照下面图片描述进行设置操作即可。</p>
-<p><img src="./imgs/20171204201910404-1711089370295-1" alt="这里写图片描述"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/20171204201910404-1711089370295-1-1711090045612-15-1711090057596-29" alt="这里写图片描述"></p>
 <p>​    注意：可能需要设置选择“不管用户是否登录都要运行”选项，然后回车确定，在弹出来的窗口中点击输入“用户名和密码”，否则在系统过期时无法完成启动。</p>
 <h2 id="centos将数据库设置为开机自启动"><a href="#centos将数据库设置为开机自启动" class="headerlink" title="centos将数据库设置为开机自启动"></a>centos将数据库设置为开机自启动</h2><p>​    在服务器上安装的各种中间件，为了防止意外宕机重启导致的后果，一般都需要配置成开机自启动。但是有些中间件的安装过程中并没有提供相关配置开机自启动的说明文档。今天和各位大朋友们聊一聊Centos上配置服务开机自启动的几种方式。</p>
 <p><strong>Centos下配置服务开机自启动有3种方式：</strong></p>
@@ -313,9 +313,9 @@
 <h3 id="1-在-etc-rc-d-rc-local中添加服务启动命令"><a href="#1-在-etc-rc-d-rc-local中添加服务启动命令" class="headerlink" title="1. 在/etc/rc.d/rc.local中添加服务启动命令"></a><strong>1. 在/etc/rc.d/rc.local中添加服务启动命令</strong></h3><p>/etc/rc.d/rc.local脚本会在Centos系统启动时被自动执行，所以可以把需要开机后执行的命令直接放在这里。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">vi /etc/rc.d/rc.local</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="./imgs/2529681-20230601220008454-397450866-1711088408300-5-1711089370296-3.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220008454-397450866-1711088408300-5-1711089370296-3-1711090045612-16-1711090057596-30.png" alt="img"></p>
 <p>想简单点可以直接将服务的启动命令添加到/etc/rc.d/rc.local中：</p>
-<p><img src="./imgs/2529681-20230601220044976-1617277185-1711088408300-7-1711089370295-2.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220044976-1617277185-1711088408300-7-1711089370295-2-1711090045612-18-1711090057596-31.png" alt="img"></p>
 <p><strong>也可以自己编写服务启动的脚本</strong>。由于重启时是以root用户重启，需要保证root用户有脚本执行权限。</p>
 <p><strong>1）</strong>编写服务启动的脚本</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">vi /opt/script/zabbixstart.sh</span></span><br></pre></td></tr></table></figure>
@@ -349,7 +349,7 @@
 <li>chkconfig –list xxx 查看指定服务。</li>
 </ul>
 <p><strong>chkconfig运行级别level和启动顺序的概念：</strong></p>
-<p><strong><img src="./imgs/2529681-20230601220123976-2076616975-1711088408300-9-1711089370296-5.png" alt="img"></strong></p>
+<p><strong><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220123976-2076616975-1711088408300-9-1711089370296-5-1711090045612-17-1711090057596-32.png" alt="img"></strong></p>
 <p>这里的0到6其实指的就是服务的level。指定系统服务要在哪一个执行等级中开启或关毕。</p>
 <ul>
 <li>等级0表示：表示关机；</li>
@@ -369,7 +369,7 @@
 <p>//设置network服务开机自启动，会把2～5的等级都设置为on：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig network <span class="keyword">on</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="./imgs/2529681-20230601220206243-1671156388-1711088408300-11-1711089370296-7.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220206243-1671156388-1711088408300-11-1711089370296-7-1711090045612-20-1711090057597-35.png" alt="img"></p>
 <p>chkconfig配置的服务启动顺序最后都会在/etc/rc.d/目录下体现出来。</p>
 <p>使用chkconfig配置kibana开机自启实例：</p>
 <p><strong>1）</strong>在/etc/init.d目录下，新建脚本kibana，脚本内容如下</p>
@@ -413,7 +413,7 @@
 
 <p>确保你的人大金仓数据库安装路径和启动参数是正确的，否则启动脚本可能无法正常工作。</p>
 <h3 id="3-Centos7通过systemctl配置kibana服务自启动"><a href="#3-Centos7通过systemctl配置kibana服务自启动" class="headerlink" title="3. Centos7通过systemctl配置kibana服务自启动"></a><strong>3. Centos7通过systemctl配置kibana服务自启动</strong></h3><p>在Centos7后，更推荐通过systemctl来控制服务。</p>
-<p><img src="./imgs/2529681-20230601220252995-1642239706-1711088408300-13-1711089370296-4.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601220252995-1642239706-1711088408300-13-1711089370296-4-1711090045612-19-1711090057596-33.png" alt="img"></p>
 <p><strong>3.1 systemctl服务的目录介绍</strong></p>
 <p>知道服务的管理是通过 systemd，而 systemd 的配置文件大部分放置于 /usr/lib/systemd/目录内。但是 Red Hat 官方文件指出， 该目录的文件主要是原本软件所提供的设置，建议不要修改！而要修改的位置应该放置于/etc/systemd/system/目录内。</p>
 <p><strong>3.2 建立kibana开机服务件</strong></p>
@@ -454,7 +454,7 @@
 
 
 <p>服务状态说明：</p>
-<p><img src="./imgs/2529681-20230601221007190-886504275-1711088408300-15-1711089370296-6.png" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/2529681-20230601221007190-886504275-1711088408300-15-1711089370296-6-1711090045612-21-1711090057596-34.png" alt="img"></p>
 
     
 
@@ -869,7 +869,7 @@ if (canvasEl) {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -877,7 +877,7 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -885,11 +885,15 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">实施运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -909,11 +913,11 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">实施运维</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -922,10 +926,6 @@ if (canvasEl) {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网站</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">

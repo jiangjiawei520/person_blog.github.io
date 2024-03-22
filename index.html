@@ -714,7 +714,7 @@
 <h2 id="按标签设置密码"><a href="#按标签设置密码" class="headerlink" title="按标签设置密码"></a>按标签设置密码</h2><p>在博客根目录下的_config.xml中添加:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">encrypt: # hexo-blog-encrypt</span><br><span class="line">  abstract: 这里有东西被加密了，需要输入密码查看哦。</span><br><span class="line">  message: 您好, 这里需要密码.</span><br><span class="line">  tags:</span><br><span class="line">  - &#123;name: tagName, password: 密码A&#125;</span><br><span class="line">  - &#123;name: tagName, password: 密码B&#125;</span><br><span class="line">  template: &lt;div id&#x3D;&quot;hexo-blog-encrypt&quot; data-wpm&#x3D;&quot;&#123;&#123;hbeWrongPassMessage&#125;&#125;&quot; data-whm&#x3D;&quot;&#123;&#123;hbeWrongHashMessage&#125;&#125;&quot;&gt;&lt;div class&#x3D;&quot;hbe-input-container&quot;&gt;&lt;input type&#x3D;&quot;password&quot; id&#x3D;&quot;hbePass&quot; placeholder&#x3D;&quot;&#123;&#123;hbeMessage&#125;&#125;&quot; &#x2F;&gt;&lt;label&gt;&#123;&#123;hbeMessage&#125;&#125;&lt;&#x2F;label&gt;&lt;div class&#x3D;&quot;bottom-line&quot;&gt;&lt;&#x2F;div&gt;&lt;&#x2F;div&gt;&lt;script id&#x3D;&quot;hbeData&quot; type&#x3D;&quot;hbeData&quot; data-hmacdigest&#x3D;&quot;&#123;&#123;hbeHmacDigest&#125;&#125;&quot;&gt;&#123;&#123;hbeEncryptedData&#125;&#125;&lt;&#x2F;script&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  wrong_pass_message: 抱歉, 这个密码看着不太对, 请再试试.</span><br><span class="line">  wrong_hash_message: 抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.</span><br></pre></td></tr></table></figure>
 
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p><img src="./imgs/image-20240320163358836-1711088473591-24.png" alt="image-20240320163358836"></p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/image-20240320163358836-1711088473591-24.png" alt="image-20240320163358836"></p>
 <h2 id="配置优先级"><a href="#配置优先级" class="headerlink" title="配置优先级"></a>配置优先级</h2><p>文章信息头 &gt; _config.yml (站点根目录下的) &gt; 默认配置</p>
 
     
@@ -1498,10 +1498,10 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>Linux运维记录-根磁盘扩容（LVM+非LVM<em>1.查看现有分区大小**df -T</em> </p>
-<p><img src="/imgs/3259553-89b0157044970265-1710816777631-162.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-89b0157044970265-1710816777631-162.webp" alt="img"></p>
 <p>LVM分区，磁盘总大小为20G,根分区总容量为17G</p>
 <p>2.关机增加大小为30G(测试环境使用的Vmware Workstation)</p>
-<p><img src="/imgs/3259553-2797e3050686449b-1710816777632-163.webp" alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/3259553-2797e3050686449b-1710816777632-163.webp" alt="img"></p>
 <p>扩展分区到30G</p>
     
     <a class="article-more-a" href="/posts/5db16466/#more">more >></a>
@@ -1892,7 +1892,7 @@ if (canvasEl) {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1900,7 +1900,7 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1908,11 +1908,15 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
+                <a href="javascript:void(0)" class="js-tag color5">实施运维</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1932,11 +1936,11 @@ if (canvasEl) {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">实施运维</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1945,10 +1949,6 @@ if (canvasEl) {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网站</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Typora</a>
               </li>
              
               <li class="article-tag-list-item">
