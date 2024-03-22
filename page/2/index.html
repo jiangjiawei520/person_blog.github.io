@@ -439,7 +439,7 @@
     
     <h2 id="本地图片"><a href="#本地图片" class="headerlink" title="本地图片"></a>本地图片</h2><p>博客的 Markdown 文档都存储在 <code>source/_posts</code> 下，然后博客相关图片都存在 <code>source/imgs</code> 下，接着来修改 typora 的设置。</p>
 <p>打开 <code>文件 - 偏好设置 - 图像</code> 进行修改如下图修改</p>
-<p><img src="https://raw.githubusercontent.com/jiangjiawei520/HunkImgs/master/img/image-20240319105445610-1711088584797-161.png" alt="image-20240319105445610"></p>
+<p><img src="/imgs/image-20240319105445610-1711088584797-161-1711095546048-162.png" alt="image-20240319105445610"></p>
 <p>这样拖拽或粘贴过来的图片会自动复制到 <code>source/imgs</code> 下面，不过这样只是可以在 typora 中查看图片了，要想在 hexo 中查看就需要图片路径与服务器中相符合， <code>source/imgs</code> 文件夹下的图片在 hexo 中可以用如 <code>/images/abc.png</code> 的路径访问到，而 typora 可以设置图片根目录，设置完了后图片路径都是 <code>/images/abc.png</code> 这样的，这样一配合就解决了图片路径问题，具体做法是在 <code>格式 - 图像 - 设置图片根目录</code> 中 将 <code>source</code> 文件夹设置为图片根目录，也可在每篇 Markdown 文档中 YAML Front Matter 中添加 <code>typora-root-url: ..</code>，或者直接在 <code>scaffolds</code> 中的模板里直接添加，这样每次 <code>hexo new post</code> 时就会自动生成了。</p>
     
     <a class="article-more-a" href="/posts/12a70b22/#more">more >></a>
@@ -1553,11 +1553,11 @@ if (canvasEl) {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">其他</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">其他</a>
+                <a href="javascript:void(0)" class="js-tag color5">心情随笔</a>
               </li>
              
               <li class="article-tag-list-item">
