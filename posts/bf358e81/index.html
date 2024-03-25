@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://github.com/imgs/2529681-20230601220252995-1642239706-1711094906161-5.png">
 <meta property="og:image" content="https://github.com/imgs/2529681-20230601221007190-886504275-1711094906161-7.png">
 <meta property="article:published_time" content="2024-03-22T01:42:39.552Z">
-<meta property="article:modified_time" content="2024-03-22T08:17:20.001Z">
+<meta property="article:modified_time" content="2024-03-25T06:58:46.392Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="CentOS7">
 <meta property="article:tag" content="Windows">
@@ -273,7 +273,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.3k字</span>
+      <span class="post-count">2.6k字</span>
     </span>
   </span>
 
@@ -282,7 +282,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
+      <span class="post-count">10分</span>
     </span>
   </span>
 </div>
@@ -337,6 +337,10 @@
 
 <p><strong>4）</strong>在centos7中，/etc/rc.d/rc.local的权限被降低了，所以需要执行如下命令赋予其可执行权限</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">chmod +x /etc/rc.d/rc.local</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="设置oracle开机启动"><a href="#设置oracle开机启动" class="headerlink" title="设置oracle开机启动"></a>设置oracle开机启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#如果想用$ORACLE_HOME&#x2F;bin&#x2F;dbstart脚本来启动数据库，则需要将&#x2F;etc&#x2F;oratab文件中相应的数据库的项置为Y。简单的说就是dbstart脚本根据oratab文件中的配置决定启动哪几个数据库</span><br><span class="line">#FXK等为实例名；&#x2F;data&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;db_1为oracle安装目录 </span><br><span class="line">cat &#x2F;etc&#x2F;oratab</span><br><span class="line">FXK:&#x2F;data&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;db_1:Y</span><br><span class="line">tgysck:&#x2F;data&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;db_1:Y</span><br><span class="line">YWK:&#x2F;data&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;db_1:Y</span><br><span class="line">JCKZJK:&#x2F;data&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;db_1:Y</span><br><span class="line">JCKNEW:&#x2F;data&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;db_1:Y</span><br><span class="line"></span><br><span class="line">#&#x2F;etc&#x2F;rc.d&#x2F;rc.local脚本会在Centos系统启动时被自动执行</span><br><span class="line"># su oracle -lc 切换oracle用户执行命令，执行完成后切换回原用户</span><br><span class="line">cat &#x2F;etc&#x2F;rc.d&#x2F;rc.local</span><br><span class="line">su oracle -lc &quot;&#x2F;data&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;db_1&#x2F;bin&#x2F;lsnrctl start&quot;</span><br><span class="line">su oracle -lc &quot;&#x2F;data&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;db_1&#x2F;bin&#x2F;dbstart&quot;</span><br></pre></td></tr></table></figure>
+
+
 
 <h3 id="2-通过chkconfig配置"><a href="#2-通过chkconfig配置" class="headerlink" title="2. 通过chkconfig配置"></a><strong>2. 通过chkconfig配置</strong></h3><p>在CentOS7之前，可以通过chkconfig来配置开机自启动服务。</p>
 <p><strong>chkconfig相关命令：</strong></p>
@@ -523,7 +527,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows%E5%B0%86bat%E8%84%9A%E6%9C%AC%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text">windows将bat脚本设置为开机自启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">修改注册表的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%84%9A%E6%9C%AC%E5%90%AF%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">设置脚本启动的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">添加任务计划的方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#centos%E5%B0%86%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">2.</span> <span class="toc-text">centos将数据库设置为开机自启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8-etc-rc-d-rc-local%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.1.</span> <span class="toc-text">1. 在&#x2F;etc&#x2F;rc.d&#x2F;rc.local中添加服务启动命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%9A%E8%BF%87chkconfig%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text">2. 通过chkconfig配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#centos-%E4%BA%BA%E5%A4%A7%E9%87%91%E4%BB%93%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC"><span class="toc-number">2.2.1.</span> <span class="toc-text">centos 人大金仓启动脚本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Centos7%E9%80%9A%E8%BF%87systemctl%E9%85%8D%E7%BD%AEkibana%E6%9C%8D%E5%8A%A1%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">2.3.</span> <span class="toc-text">3. Centos7通过systemctl配置kibana服务自启动</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#windows%E5%B0%86bat%E8%84%9A%E6%9C%AC%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">1.</span> <span class="toc-text">windows将bat脚本设置为开机自启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%B3%A8%E5%86%8C%E8%A1%A8%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">修改注册表的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E8%84%9A%E6%9C%AC%E5%90%AF%E5%8A%A8%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">设置脚本启动的方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%BB%BB%E5%8A%A1%E8%AE%A1%E5%88%92%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">添加任务计划的方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#centos%E5%B0%86%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E7%BD%AE%E4%B8%BA%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">2.</span> <span class="toc-text">centos将数据库设置为开机自启动</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%A8-etc-rc-d-rc-local%E4%B8%AD%E6%B7%BB%E5%8A%A0%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">2.1.</span> <span class="toc-text">1. 在&#x2F;etc&#x2F;rc.d&#x2F;rc.local中添加服务启动命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AEoracle%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">设置oracle开机启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%80%9A%E8%BF%87chkconfig%E9%85%8D%E7%BD%AE"><span class="toc-number">2.2.</span> <span class="toc-text">2. 通过chkconfig配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#centos-%E4%BA%BA%E5%A4%A7%E9%87%91%E4%BB%93%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC"><span class="toc-number">2.2.1.</span> <span class="toc-text">centos 人大金仓启动脚本</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Centos7%E9%80%9A%E8%BF%87systemctl%E9%85%8D%E7%BD%AEkibana%E6%9C%8D%E5%8A%A1%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="toc-number">2.3.</span> <span class="toc-text">3. Centos7通过systemctl配置kibana服务自启动</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
