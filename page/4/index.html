@@ -245,6 +245,115 @@
             
 
   
+    <article id="post-2021-03-31-github分支备份博客源文件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/posts/8c3abf48/">github分支备份博客源文件 (2021-03-31)</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/posts/8c3abf48/" class="archive-article-date">
+        <time datetime="2021-03-31T09:22:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-31</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>刚建立的博客的所有文件, 刚开始是没有.git文件夹的.</p>
+<p>首先进入.deploy_git目录下, 新建一个分支get-GoCN-news_bak</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch get-GoCN-news_bak</span><br></pre></td></tr></table></figure>
+
+<p>然后将该目录下的.git文件夹复制到博客的根目录下, 也就是上一级目录.<br>在git bash下操作, 切换到hexo分支.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout get-GoCN-news_bak</span><br></pre></td></tr></table></figure>
+
+<p>切回主分支</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+
+<p>将根目录下的文件先建立索引, 后推送到远程仓库的hexo分支上.<br>// 将文件添加到版本库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+
+<p>// 上传到版本库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;描述信息&quot;</span><br></pre></td></tr></table></figure>
+
+<p>// 添加远程推送地址</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin https://github.com/JiangJiaWei520/get-GoCN-news.git</span><br></pre></td></tr></table></figure>
+
+<p>// 将本地仓库的内容推送到远程仓库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin get-GoCN-news_bak</span><br></pre></td></tr></table></figure>
+
+<p>注意:</p>
+<p>不用担心远程提交时会将.deploy_git目录一块提交上去, 在博客根目录下有一个文件.gitignore, 下面是里面的内容, 因为该文件已经把.deploy*的内容全部忽略了, 所以提交时, 只会将剩下的文件提交到博客仓库的hexo分支上去. 完成上面操作后, 刷新仓库会看到这是有两个分支. 这是就算完成了.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br></pre></td></tr></table></figure>
+
+
+
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">github</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-2020-08-30-notes" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -805,6 +914,10 @@ if (canvasEl) {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">网站</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">漏洞修复</a>
               </li>
             
             <div class="clearfix"></div>
