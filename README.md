@@ -1,5 +1,32 @@
 ## 本博客使用的视Hexo 主题 yilia-plus
 
+## 准备工作
+
+​	建立hexo博客有二种方式，一直接拷贝已有的资源（需要包含源码source、_config.yml、package.json等）；二hexo新建博客。
+
+### 方式一
+
+假设本地Hexo博客基础环境已经搭好：比如安装git、nodejs、hexo安装等等。
+
+	拷贝整个项目，然后执行
+	hexo clean
+	hexo g
+	hexo d
+### 方式二
+
+```
+1、新建文件夹
+blog
+2、初始化
+hexo init
+3、clone主题
+4、运行测试 
+hexo g 
+hexo s
+```
+
+
+
 ## 开始使用
 
 #### 1、安装
@@ -20,9 +47,9 @@ cd themes/yilia-plus
 git pull
 ```
 
-## 四、配置
+#### 4、配置
 
- 1、根目录下的`_config.yml`，请根据自己需要修改使用。
+#####  1、根目录下的`_config.yml`，请根据自己需要修改使用。
 
 ```
 # Hexo Configuration
@@ -158,7 +185,7 @@ jsonContent:
     tags: true
 ```
 
-2、主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
+##### 2、主题配置文件在主目录下的`_config.yml`，请根据自己需要修改使用。
 
 > 完整配置Demo例子，可以参考[yilia-plus博客备份](http://github.com/JoeyBling/yilia-plus-demo)
 
@@ -463,7 +490,82 @@ aboutme: xxx
 
 ```
 
-### 注意：
+## 配置相册
+
+思路：
+不能把所有图片都放在source静态资源下，一是数据量太大，增加Hexo的负担（所以我们把图片放在github），二是加载高清大图片资源缓慢（所以我们用python对图片进行批量压缩处理），这样加载呈现压缩图，点击才加载原图。
+
+### 1. 需要准备的资料
+
+```
+1. 本文为hexo-theme-yilia主题，其他hexo主题请另行百度
+
+2. GitHub上新建一个仓库存储照片（此仓库的作用除了储存还负责更新hexo博客引用的图片链接地址），为了少走弯路，请直接fork原作者的仓库(https://github.com/lawlite19/Blog-Back-Up.git)，若下载速度太慢，可选择我的备用地址(https://github.com/Janche/Blog-Photo.git)
+3. Python环境（安装Python3，并配置环境变量，对照片的处理是通过Python命令来处理的）
+4. 在你的hexo博客的source文件夹下(注意不是yilia主题下的source)，新建一个photos文件夹,用于存放照片相关的文件， 也可通过命令 hexo new page photos创建
+```
+
+### 2. 更改储存照片仓库(`Blog-Back-Up`)中的URL
+
+#### 仓库目录说明
+
+![仓库目录](https://img-blog.csdnimg.cn/20190616211830463.png)
+
+#### **修改`ins.js`**
+
+![在这里插入图片描述](https://img-blog.csdnimg.cn/20190825220428873.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0OTk3OTA2,size_16,color_FFFFFF,t_70)
+蓝框中的地址需要改为你项目中empty.png的路径，否则图片也无法正常显示。红框中的地址应改为你[GitHub](https://so.csdn.net/so/search?q=GitHub&spm=1001.2101.3001.7020)存储照片仓库图片的地址(`注意一定是点击download后地址栏的url`)，如图b
+
+图a：![图1](https://img-blog.csdnimg.cn/20190616214440938.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0OTk3OTA2,size_16,color_FFFFFF,t_70)
+图b:
+![图2](https://img-blog.csdnimg.cn/20190616220832849.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0OTk3OTA2,size_16,color_FFFFFF,t_70)
+
+#### **修改tool.py文件**
+
+![img](https://img-blog.csdnimg.cn/20190616213043110.png)
+
+将红框处的地址替换为[hexo](https://so.csdn.net/so/search?q=hexo&spm=1001.2101.3001.7020)博客刚新建的photos地址，这样每次上传图片后将自动更新到hexo博客中。
+
+#### **照片上传步骤**
+
+```
+1. 将blog_photos_copy目录下的5个文件拷贝到hexo博客刚新建的photos目录下，注意，只有第一次配置时需要执行这一步，后续新增照片均不需要。
+2. 新加的照片按照YYYY-MM-dd_照片文字描述.jpg格式添加到Blog-Photo的photos目录
+3. 运行Python命令：python tool.py，期间可能需要下载部分python的依赖，根据错误，百度下载就好了。
+4. 上面3后，json文件会生成到设置博客的目录下，对应博客提交同步代码上去就可以使用
+```
+
+### 3.配置hexo博客
+
+#### 修改`yilia`主题的`_config.yml`
+
+![图片3](https://img-blog.csdnimg.cn/20190616225106606.png)
+
+#### 将empty.png图片也放于之前的`source`目录下
+
+![empty.png](https://img-blog.csdnimg.cn/20190616231743342.png)
+
+## 配置音乐
+
+#### 为hexo博客添加音频播放
+
+<!--音乐播放插件-->
+
+<div style="margin-top:30px;">                                                       
+  <iframe frameborder="no" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5232465&auto=1&height=66"></iframe>
+</div>
+
+
+**你没有看错，就只有这三行代码，你想在那篇文章加音乐，直接添加这三行就行了，src后的链接为歌曲的外链地址，很多歌曲都因为版权而无法生成外链地址。 **
+
+参考文章：
+
+https://blog.csdn.net/u013082989/article/details/70162293
+https://blog.csdn.net/wardseptember/article/details/82780684
+
+
+
+## 注意：
 
 - **hexo 的 CNAME 文件** 需要放在source 目录下，每次运行hexo clean会清除public 目录，hexo g重新生成，hexo d发布到远程服务器。
 
