@@ -2,27 +2,19 @@
 
 ## 准备工作
 
-​	建立hexo博客有二种方式，一直接拷贝已有的资源（需要包含源码source、_config.yml、package.json等）；二hexo新建博客。
-
-### 方式一
-
-假设本地Hexo博客基础环境已经搭好：比如安装git、nodejs、hexo安装等等。
-
-	拷贝整个项目，然后执行
-	hexo clean
-	hexo g
-	hexo d
-### 方式二
+​	建立hexo博客，用到的命令
 
 ```
 1、新建文件夹
-blog
+person_blog
 2、初始化
 hexo init
 3、clone主题
 4、运行测试 
-hexo g 
-hexo s
+hexo g //发布html
+hexo s //发布服务，默认端口4000
+hexo d //上传同步代码
+hexo b //备份源码，需要安装hexo-git-backup插件
 ```
 
 
@@ -32,22 +24,23 @@ hexo s
 #### 1、安装
 
 ```
+1、新建目录，如person_blog
+2、初始化hexo
+hexo init
+3、进入主题目录，拉取主题
 cd ./themes/
-git clone --depth=1 https://github.com/JoeyBling/hexo-theme-yilia-plus.git ./yilia-plus
+git clone --branch backup https://github.com/jiangjiawei520/person_blog.github.io.git ./yilia-plus  //拉取备份分支里面的主题
 ```
 
 #### 2、配置
 
-修改hexo根目录下的 `_config.yml` ![arrow_right](https://github.githubassets.com/images/icons/emoji/unicode/27a1.png) `theme: yilia-plus`
-
-#### 3、更新
+修改hexo根目录下的 `_config.yml` ,启用yilia-plus主题
 
 ```
-cd themes/yilia-plus
-git pull
+theme: yilia-plus
 ```
 
-#### 4、配置
+#### 3、主题配置
 
 #####  1、根目录下的`_config.yml`，请根据自己需要修改使用。
 
@@ -56,7 +49,7 @@ git pull
 ## Docs: https://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
-# Site
+# Site 博客标题
 title: 蒋家威的博客
 #subtitle: subtitle
 #description: description
@@ -190,9 +183,7 @@ jsonContent:
 > 完整配置Demo例子，可以参考[yilia-plus博客备份](http://github.com/JoeyBling/yilia-plus-demo)
 
 ```
-# Header-菜单 配置后再_post中的md文件中填入对应的tags即可，比如
-#tags:
-#  - 其他
+# Header-菜单 配置后再_post中的md文件中填入对应的tags即可（侧边栏菜单）
 menu:
   主页: /
   日记本: /tags/日记本/
@@ -228,7 +219,7 @@ subNav:
   #twitter: "#"
   #linkedin: "#"
 
-#配置副标题相关内容,如果还不显示,看下\layout\_partial\left-col.ejs中是否被注释掉
+#配置副标题相关内容,如果还不显示,看下\layout\_partial\left-col.ejs中是否被注释掉（站点次标题和打字动效）
 subtitle: The first step is as good as half over.
 description: description
 author: JWSingle
